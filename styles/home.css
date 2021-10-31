@@ -2,9 +2,27 @@ body {
   overflow: hidden;
 }
 
+@property --rotate-y {
+  syntax: '<number>'; /* <- defined as type number for the transition to work */
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --rotate-y: 0;
+  }
+
+  to {
+    --rotate-y: 360;
+  }
+}
+
 .floor {
   --width: 90;
   --height: 90;
+
+  animation: spin 60s infinite linear;
 
   background-color: #e5e5f7;
   opacity: 1;
