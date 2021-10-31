@@ -12,8 +12,23 @@
 </head>
 <body>
   <header class="scene">
-    <div class="plane">
-      <css-cuboid width="25" height="25" depth="25" texture="radial-gradient(circle, rgba(185,217,236,1) 0%, rgba(148,187,233,1) 100%)" class="cuboid"></css-cuboid>
+    <div class="plane floor">
+      <div class="plane table">
+        <css-cuboid width="2" height="12" depth="2" z="6" texture="url(img/wood.png)" class="leg"></css-cuboid>
+        <css-cuboid width="2" height="12" depth="2" z="6" y="23" texture="url(img/wood.png)" class="leg"></css-cuboid>
+        <css-cuboid width="2" height="12" depth="2" z="6" x="48" texture="url(img/wood.png)" class="leg"></css-cuboid>
+        <css-cuboid width="2" height="12" depth="2" z="6" x="48" y="23" texture="url(img/wood.png)" class="leg"></css-cuboid>
+
+        <css-cuboid width="53" height="2" depth="28" x="-1.5" y="-1.5" z="12" texture="url(img/wood.png)" class="desktop"></css-cuboid>
+
+        <!-- shadows -->
+        <div class="table__shadow"></div>
+
+        <div class="table__shadow table__shadow--leg bl"></div>
+        <div class="table__shadow table__shadow--leg fl"></div>
+        <div class="table__shadow table__shadow--leg br"></div>
+        <div class="table__shadow table__shadow--leg fr"></div>
+      </div>
     </div>
   </header>
 </body>

@@ -18,22 +18,26 @@ class Cuboid extends HTMLElement {
 
     const texture = this.hasAttribute("texture") ? this.getAttribute("texture") : "rgba(0, 0, 0, 0.2)";
 
+    const cssVariables = `
+      --width: ${width}vmin;
+      --height: ${height}vmin;
+      --depth: ${depth}vmin;
+
+      --x: ${x}vmin;
+      --y: ${y}vmin;
+      --z: ${z}vmin;
+
+      --rotate-x: ${rotateX}deg;
+      --rotate-y: ${rotateY}deg;
+      --rotate-z: ${rotateZ}deg;
+
+      --background: ${texture};
+    `;
+
     const style = document.createElement("style");
     style.textContent = `
       .cuboid {
-        --width: ${width}vmin;
-        --height: ${height}vmin;
-        --depth: ${depth}vmin;
-
-        --x: ${x}vmin;
-        --y: ${y}vmin;
-        --z: ${z}vmin;
-
-        --rotate-x: ${rotateX}deg;
-        --rotate-y: ${rotateY}deg;
-        --rotate-z: ${rotateZ}deg;
-
-        --background: ${texture};
+        ${cssVariables}
 
         position: absolute;
         transform-style: preserve-3d;
