@@ -46,12 +46,12 @@ class OrbitControls {
     this.rotateX -= diffY / window.innerHeight * this.sensitivity;
     this.rotateY += diffX / window.innerWidth * this.sensitivity;
 
-    element.style.cssText = `--rotate-x: ${this.rotateX}; --rotate-y: ${this.rotateY};`
+    this.element.style.cssText = `--rotate-x: ${this.rotateX}; --rotate-y: ${this.rotateY};`
 
     this.lastX = this.cursorX;
     this.lastY = this.cursorY;
   }
 }
 
-const element = document.getElementById("orbit-controls");
-if (element) new OrbitControls(element);
+const orbitElement = document.getElementById("orbit-controls");
+if (orbitElement) new OrbitControls(orbitElement);
