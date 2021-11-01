@@ -10,7 +10,7 @@ body {
 }
 
 .scene {
-  --perspective: 1000;
+  --perspective: 700;
 
   width: 100vw;
   height: 100vh;
