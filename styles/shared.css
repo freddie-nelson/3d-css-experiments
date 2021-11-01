@@ -29,8 +29,8 @@ body {
   --y: 0;
   --z: 0;
 
-  --rotate-x: -24;
-  --rotate-y: -24;
+  --rotate-x: 0;
+  --rotate-y: 0;
 
   background: hsla(180, 50%, 50%, 0.5);
   height: calc(var(--height) * 1vmin);

@@ -8,28 +8,35 @@
   <link rel="stylesheet" href="styles/shared.css">
   <link rel="stylesheet" href="styles/home.css">
 
-  <script src="js/elements.js" defer></script>
+  <script src="js/cuboid.js" defer></script>
+  <script src="js/text.js" defer></script>
 </head>
 <body>
   <header class="scene">
-    <div class="plane floor">
-      <div class="plane table">
-        <css-cuboid width="2" height="12" depth="2" z="6" texture="url(img/wood2.png)" class="leg"></css-cuboid>
-        <css-cuboid width="2" height="12" depth="2" z="6" y="23" texture="url(img/wood2.png)" class="leg"></css-cuboid>
-        <css-cuboid width="2" height="12" depth="2" z="6" x="48" texture="url(img/wood2.png)" class="leg"></css-cuboid>
-        <css-cuboid width="2" height="12" depth="2" z="6" x="48" y="23" texture="url(img/wood2.png)" class="leg"></css-cuboid>
+    <css-camera>
+      <div class="plane floor">
+        <div class="plane table">
+          <css-cuboid width="2" height="12" depth="2" z="6" texture="url(img/wood2.png)" class="leg"></css-cuboid>
+          <css-cuboid width="2" height="12" depth="2" z="6" y="23" texture="url(img/wood2.png)" class="leg"></css-cuboid>
+          <css-cuboid width="2" height="12" depth="2" z="6" x="48" texture="url(img/wood2.png)" class="leg"></css-cuboid>
+          <css-cuboid width="2" height="12" depth="2" z="6" x="48" y="23" texture="url(img/wood2.png)" class="leg"></css-cuboid>
 
-        <css-cuboid width="53" height="2" depth="28" x="-1.5" y="-1.5" z="12" texture="url(img/wood.png)" class="desktop"></css-cuboid>
+          <css-cuboid width="53" height="2" depth="28" x="-1.5" y="-1.5" z="12" texture="url(img/wood.png)" class="desktop"></css-cuboid>
 
-        <!-- shadows -->
-        <div class="table__shadow"></div>
+          <div class="plane desktop">
+            <css-text class="desktop__title" font="bold 5.5vmin Arial" depth="2" z="2" texture="radial-gradient(#00f3ff, rgb(112 143 255))" center shadow>Freddie's 3D CSS</css-text>
+          </div>
 
-        <div class="table__shadow table__shadow--leg bl"></div>
-        <div class="table__shadow table__shadow--leg fl"></div>
-        <div class="table__shadow table__shadow--leg br"></div>
-        <div class="table__shadow table__shadow--leg fr"></div>
+          <!-- shadows -->
+          <div class="table__shadow"></div>
+
+          <div class="table__shadow table__shadow--leg bl"></div>
+          <div class="table__shadow table__shadow--leg fl"></div>
+          <div class="table__shadow table__shadow--leg br"></div>
+          <div class="table__shadow table__shadow--leg fr"></div>
+        </div>
       </div>
-    </div>
+    </camera>
   </header>
 </body>
 </html>

@@ -22,7 +22,10 @@ body {
   --width: 90;
   --height: 90;
 
-  animation: spin 60s infinite linear;
+  --rotate-x: -25;
+  --rotate-y: -10;
+
+  /* animation: spin 20s infinite linear; */
 
   background-color: #e5e5f7;
   opacity: 1;
@@ -79,4 +82,20 @@ body {
 
 .table__shadow--leg.fr {
   transform: translate(-50%, -50%) translate3d(24vmin, 11.5vmin, 0);
+}
+
+.desktop {
+  --rotate-x: -90;
+
+  --width: 25vmin;
+
+  --z: 13;
+
+  background: none;
+}
+
+.desktop__title {
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
