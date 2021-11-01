@@ -1,5 +1,6 @@
 body {
   overflow: hidden;
+  background: radial-gradient(rgb(19, 21, 36), rgb(15, 15, 20));
 }
 
 @property --rotate-y {
@@ -25,12 +26,12 @@ body {
   --rotate-x: -25;
   --rotate-y: -10;
 
-  /* animation: spin 20s infinite linear; */
+  animation: 20s infinite linear;
 
   background-color: #e5e5f7;
   opacity: 1;
-  background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 100px 100px, linear-gradient(#9196a6 8px, transparent 8px) 0 -4px, linear-gradient(90deg, #9196a6 8px, #e5e5f7 8px) -4px 0;
-  background-size: 200px 200px, 200px 200px, 100px 100px, 100px 100px;
+  background: url(/img/floor.jpg);
+  background-size: 25%;
 }
 
 .table {

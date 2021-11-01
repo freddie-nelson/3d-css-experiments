@@ -1,7 +1,7 @@
 class ZoomControls {
   zoom = 1;
   minZoom = 0.1;
-  maxZoom = 2.5;
+  maxZoom = 2;
   sensitivity = 0.001;
   
   startPerspective = 1000;

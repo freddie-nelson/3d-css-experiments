@@ -5,6 +5,9 @@ class OrbitControls {
   mouseX = 0;
   mouseY = 0;
 
+  anchorX = 0;
+  anchorY = 0;
+
   lastX = 0;
   lastY = 0;
 
@@ -18,16 +21,18 @@ class OrbitControls {
 
   element;
 
-  constructor(element) {
+  constructor(element, spin) {
     this.element = element;
     element.style.cssText = `--rotate-x: ${this.rotateX}; --rotate-y: ${this.rotateY};`
 
+    // event listeners
     document.body.addEventListener("mousedown", (e) => { 
       this.dragging = true; 
+      this.anchorX = e.clientX; 
+      this.anchorY = e.clientY;
       this.lastX = e.clientX; 
       this.lastY = e.clientY;
     });
-
     document.body.addEventListener("mousemove", (e) => {
       if (!this.dragging) return;
 
@@ -35,8 +40,23 @@ class OrbitControls {
       this.cursorY = e.clientY;
       this.orbit();
     });
+    document.body.addEventListener("mouseup", (e) => { 
+      this.dragging = false;
+    });
 
-    document.body.addEventListener("mouseup", () => { this.dragging = false; });
+    // spin animation
+    if (spin) {
+      this.spin();
+    }
+  }
+
+  spin() {
+    requestAnimationFrame(() => this.spin());
+    if (this.dragging) return; 
+
+    const direction = Math.sign(this.cursorX - this.anchorX) || -1;
+    this.rotateY += 0.001 * this.sensitivity * direction;
+    this.element.style.cssText = `--rotate-x: ${this.rotateX}; --rotate-y: ${this.rotateY};`
   }
 
   orbit() {
@@ -54,4 +74,4 @@ class OrbitControls {
 }
 
 const orbitElement = document.getElementById("orbit-controls");
-if (orbitElement) new OrbitControls(orbitElement);
+if (orbitElement) new OrbitControls(orbitElement, orbitElement.hasAttribute("spin"));
