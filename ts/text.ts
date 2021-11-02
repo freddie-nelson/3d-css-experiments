@@ -61,7 +61,7 @@ class Text3D extends HTMLElement {
     for (let i = 0; i < Number(depth) * perUnit; i++) {
       const layer = document.createElement("div");
       layer.classList.add("text__layer");
-      layer.style.cssText += `--depth: ${i/perUnit}; ${i === (Number(depth) * perUnit - 1) ? "filter: brightness(1);" : ""}`;
+      layer.style.cssText += `--depth: ${i/perUnit - Number(depth) / 2}; ${i === (Number(depth) * perUnit - 1) ? "filter: brightness(1);" : ""}`;
       layer.textContent = text;
 
       layers.push(layer);      

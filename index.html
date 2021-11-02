@@ -11,84 +11,95 @@
     <script src="/ts/main.ts" defer type="module"></script>
   </head>
   <body>
-    <header id="zoom-controls" class="scene">
-      <div id="orbit-controls" spin class="plane floor">
-        <div class="plane table">
-          <css-cuboid
-            width="2"
-            height="12"
-            depth="2"
-            z="6.1"
-            texture="url(/img/wood2.jpg)"
-            boxShadow="0 0 .5vmin .2vmin #0004 inset"
-            class="leg"
-          ></css-cuboid>
-          <css-cuboid
-            width="2"
-            height="12"
-            depth="2"
-            z="6.1"
-            y="23"
-            texture="url(/img/wood2.jpg)"
-            boxShadow="0 0 .5vmin .2vmin #0004 inset"
-            class="leg"
-          ></css-cuboid>
-          <css-cuboid
-            width="2"
-            height="12"
-            depth="2"
-            z="6.1"
-            x="48"
-            texture="url(/img/wood2.jpg)"
-            boxShadow="0 0 .5vmin .2vmin #0004 inset"
-            class="leg"
-          ></css-cuboid>
-          <css-cuboid
-            width="2"
-            height="12"
-            depth="2"
-            z="6.1"
-            x="48"
-            y="23"
-            texture="url(/img/wood2.jpg)"
-            boxShadow="0 0 .5vmin .2vmin #0004 inset"
-            class="leg"
-          ></css-cuboid>
-
-          <css-cuboid
-            width="53"
-            height="2"
-            depth="28"
-            x="-1.5"
-            y="-1.5"
-            z="12"
-            texture="url(/img/wood.jpg)"
-            boxShadow="0 0 .8vmin .2vmin #0003 inset"
-            class="desktop"
-          ></css-cuboid>
-
-          <div class="plane tabletop">
-            <css-text
-              class="desktop__title"
-              font="bold 5.5vmin Arial"
+    <header>
+      <div id="zoom-controls" class="scene">
+        <div id="orbit-controls" disableX spin class="plane floor">
+          <div class="plane table">
+            <css-cuboid
+              width="2"
+              height="12"
               depth="2"
-              z="2"
-              texture="radial-gradient(#00f3ff, rgb(112 143 255))"
-              center
-              shadow
-              >Freddie's 3D CSS</css-text
-            >
+              z="6.1"
+              texture="url(/img/wood2.jpg)"
+              boxShadow="0 0 .5vmin .2vmin #0004 inset"
+              class="leg"
+            ></css-cuboid>
+            <css-cuboid
+              width="2"
+              height="12"
+              depth="2"
+              z="6.1"
+              y="23"
+              texture="url(/img/wood2.jpg)"
+              boxShadow="0 0 .5vmin .2vmin #0004 inset"
+              class="leg"
+            ></css-cuboid>
+            <css-cuboid
+              width="2"
+              height="12"
+              depth="2"
+              z="6.1"
+              x="48"
+              texture="url(/img/wood2.jpg)"
+              boxShadow="0 0 .5vmin .2vmin #0004 inset"
+              class="leg"
+            ></css-cuboid>
+            <css-cuboid
+              width="2"
+              height="12"
+              depth="2"
+              z="6.1"
+              x="48"
+              y="23"
+              texture="url(/img/wood2.jpg)"
+              boxShadow="0 0 .5vmin .2vmin #0004 inset"
+              class="leg"
+            ></css-cuboid>
+
+            <css-cuboid
+              width="53"
+              height="2"
+              depth="28"
+              x="-1.5"
+              y="-1.5"
+              z="12"
+              texture="url(/img/wood.jpg)"
+              boxShadow="0 0 .8vmin .2vmin #0003 inset"
+              class="desktop"
+            ></css-cuboid>
+
+            <div class="plane tabletop">
+              <css-text
+                class="desktop__title"
+                font="bold 5.5vmin Arial"
+                depth="2"
+                z="2"
+                texture="radial-gradient(#00f3ff, rgb(112 143 255))"
+                center
+                shadow
+                >Freddie's 3D CSS</css-text
+              >
+            </div>
+
+            <!-- shadows -->
+            <div class="table__shadow"></div>
+
+            <div class="table__shadow table__shadow--leg bl"></div>
+            <div class="table__shadow table__shadow--leg fl"></div>
+            <div class="table__shadow table__shadow--leg br"></div>
+            <div class="table__shadow table__shadow--leg fr"></div>
           </div>
-
-          <!-- shadows -->
-          <div class="table__shadow"></div>
-
-          <div class="table__shadow table__shadow--leg bl"></div>
-          <div class="table__shadow table__shadow--leg fl"></div>
-          <div class="table__shadow table__shadow--leg br"></div>
-          <div class="table__shadow table__shadow--leg fr"></div>
         </div>
       </div>
+
+      <a href="#main" class="scroll-btn">
+        <div class="arrow"></div>
+        <div class="arrow"></div>
+      </a>
     </header>
+
+    <main id="main">
+      <div class="seperator"></div>
+    </main>
   </body>
 </html>
