@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.scene {
+  --perspective: 700;
+
+  width: 100vw;
+  height: 100vh;
+  perspective: calc(var(--perspective, 800) * 1px);
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plane {
+  --width: 25;
+  --height: 25;
+
+  --x: 0;
+  --y: 0;
+  --z: 0;
+
+  --rotate-x: 0;
+  --rotate-y: 0;
+
+  background: hsla(180, 50%, 50%, 0.5);
+  height: calc(var(--height) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--rotate-x) * 1deg)) rotateY(calc(var(--rotate-y) * 1deg)) rotateX(90deg)
+    translate3d(calc(var(--x) * 1vmin), calc(var(--y) * 1vmin), calc(var(--z) * 1vmin));
+}

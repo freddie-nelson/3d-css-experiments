@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D CSS Experiments</title>
-  <link rel="stylesheet" href="styles/shared.css">
-  <link rel="stylesheet" href="styles/home.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D CSS Experiments</title>
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="styles/home.css" />
 
-  <script src="js/cuboid.js" defer></script>
-  <script src="js/text.js" defer></script>
-  <script src="js/orbitControls.js" defer></script>
-  <script src="js/zoomControls.js" defer></script>
-</head>
-<body>
-  <header id="zoom-controls" class="scene">
-    <div id="orbit-controls" spin class="plane floor">
+    <script src="js/cuboid.js" defer></script>
+    <script src="js/text.js" defer></script>
+    <script src="js/orbitControls.js" defer></script>
+    <script src="js/zoomControls.js" defer></script>
+  </head>
+  <body>
+    <header id="zoom-controls" class="scene">
+      <div id="orbit-controls" spin class="plane floor">
         <div class="plane table">
-          <css-cuboid width="2" height="12" depth="2" z="6.1" texture="url(img/wood2.png)" class="leg"></css-cuboid>
-          <css-cuboid width="2" height="12" depth="2" z="6.1" y="23" texture="url(img/wood2.png)" class="leg"></css-cuboid>
-          <css-cuboid width="2" height="12" depth="2" z="6.1" x="48" texture="url(img/wood2.png)" class="leg"></css-cuboid>
-          <css-cuboid width="2" height="12" depth="2" z="6.1" x="48" y="23" texture="url(img/wood2.png)" class="leg"></css-cuboid>
+          <css-cuboid
+            width="2"
+            height="12"
+            depth="2"
+            z="6.1"
+            texture="url(/img/wood2.png)"
+            class="leg"
+          ></css-cuboid>
+          <css-cuboid
+            width="2"
+            height="12"
+            depth="2"
+            z="6.1"
+            y="23"
+            texture="url(/img/wood2.png)"
+            class="leg"
+          ></css-cuboid>
+          <css-cuboid
+            width="2"
+            height="12"
+            depth="2"
+            z="6.1"
+            x="48"
+            texture="url(/img/wood2.png)"
+            class="leg"
+          ></css-cuboid>
+          <css-cuboid
+            width="2"
+            height="12"
+            depth="2"
+            z="6.1"
+            x="48"
+            y="23"
+            texture="url(/img/wood2.png)"
+            class="leg"
+          ></css-cuboid>
 
-          <css-cuboid width="53" height="2" depth="28" x="-1.5" y="-1.5" z="12" texture="url(img/wood.png)" class="desktop"></css-cuboid>
+          <css-cuboid
+            width="53"
+            height="2"
+            depth="28"
+            x="-1.5"
+            y="-1.5"
+            z="12"
+            texture="url(/img/wood.png)"
+            class="desktop"
+          ></css-cuboid>
 
-          <div class="plane desktop">
-            <css-text class="desktop__title" font="bold 5.5vmin Arial" depth="2" z="2" texture="radial-gradient(#00f3ff, rgb(112 143 255))" center shadow>Freddie's 3D CSS</css-text>
+          <div class="plane tabletop">
+            <css-text
+              class="desktop__title"
+              font="bold 5.5vmin Arial"
+              depth="2"
+              z="2"
+              texture="radial-gradient(#00f3ff, rgb(112 143 255))"
+              center
+              shadow
+              >Freddie's 3D CSS</css-text
+            >
           </div>
 
           <!-- shadows -->
@@ -37,6 +87,6 @@
           <div class="table__shadow table__shadow--leg fr"></div>
         </div>
       </div>
-  </header>
-</body>
+    </header>
+  </body>
 </html>
