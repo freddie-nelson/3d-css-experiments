@@ -17,6 +17,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    box-shadow: var(--box-shadow);
 
     /* Front face */
     &:nth-of-type(1) {

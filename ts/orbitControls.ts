@@ -1,7 +1,4 @@
 class OrbitControls {
-  rotateX = 0;
-  rotateY = 0;
-
   mouseX = 0;
   mouseY = 0;
 
@@ -18,10 +15,11 @@ class OrbitControls {
   rotateY = 0;
 
   sensitivity = 150;
+  dragging = false;
 
   element;
 
-  constructor(element, spin) {
+  constructor(element: HTMLElement, spin = false) {
     this.element = element;
     element.style.cssText = `--rotate-x: ${this.rotateX}; --rotate-y: ${this.rotateY};`
 
@@ -40,7 +38,7 @@ class OrbitControls {
       this.cursorY = e.clientY;
       this.orbit();
     });
-    document.body.addEventListener("mouseup", (e) => { 
+    document.body.addEventListener("mouseup", () => { 
       this.dragging = false;
     });
 

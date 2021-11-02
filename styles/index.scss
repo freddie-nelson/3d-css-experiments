@@ -1,21 +1,44 @@
+@import url(shared.scss);
+
 body {
   overflow: hidden;
   background: radial-gradient(rgb(19, 21, 36), rgb(15, 15, 20));
 }
 
-.floor {
-  --width: 90;
-  --height: 90;
+header {
+  --floor-width: 150;
+  --floor-height: 150;
+}
 
-  --rotate-x: -25;
-  --rotate-y: -10;
+.floor {
+  --width: var(--floor-width);
+  --height: var(--floor-height);
+
+  --rotate-x: 0;
+  --rotate-y: 0;
 
   animation: 20s infinite linear;
 
   background-color: #e5e5f7;
   opacity: 1;
   background: url(/img/floor.jpg);
-  background-size: 25%;
+  background-size: 16%;
+  border-radius: 5vmin;
+
+  box-shadow: 0 0 12vmin 4vmin rgb(12, 13, 24) inset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100.4%;
+    height: 100.4%;
+    background: radial-gradient(rgba(74, 77, 170, 0.062), 50%, rgb(12, 13, 24));
+    border-radius: 5vmin;
+  }
 }
 
 .table {
@@ -25,8 +48,8 @@ body {
   --width: 50;
   --height: 25;
 
-  --x: calc((90 - 50) / 2);
-  --y: calc((90 - 25) / 2);
+  // --x: calc((var(--floor-width) - var(--width)) / 2);
+  // --y: calc((var(--floor-height) - var(--height)) / 2);
 
   background: none;
 }
@@ -46,10 +69,13 @@ body {
   opacity: 0.9;
 
   &--leg {
-    width: 7vmin;
-    height: 7vmin;
+    width: 2vmin;
+    height: 2vmin;
+    background: black;
+    filter: blur(.5vmin);
     transform: translate(-50%, -50%);
-    opacity: 0.5;
+    opacity: .55;
+    box-shadow: 0 0 3.2vmin 1.5vmin black;
 
     &.bl {
       transform: translate(-50%, -50%) translate3d(-24vmin, -11.5vmin, 0);

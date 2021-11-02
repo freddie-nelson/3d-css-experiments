@@ -4,14 +4,12 @@ class ZoomControls {
   maxZoom = 2;
   sensitivity = 0.001;
   
-  startPerspective = 1000;
+  startPerspective = 1500;
   perspective = this.startPerspective;
-  minPerspective = 100;
-  maxPerspective = 3000;
 
   element;
 
-  constructor(element) {
+  constructor(element: HTMLElement) {
     this.element = element;
     element.style.cssText = `--perspective: ${this.perspective / this.zoom};`
 

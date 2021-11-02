@@ -1,8 +1,11 @@
+import styleSource from "/styles/cuboid.scss";
+
 class Cuboid extends HTMLElement {
   constructor() {
     super();
 
     this.attachShadow({ mode: "open" });
+    if (!this.shadowRoot) return;
 
     const width = this.hasAttribute("width") ? this.getAttribute("width") : "1";
     const height = this.hasAttribute("height") ? this.getAttribute("height") : "1";
@@ -17,6 +20,7 @@ class Cuboid extends HTMLElement {
     const rotateZ = this.hasAttribute("rotateZ") ? this.getAttribute("rotateZ") : "0";
 
     const texture = this.hasAttribute("texture") ? this.getAttribute("texture") : "rgba(0, 0, 0, 0.2)";
+    const boxShadow = this.hasAttribute("boxShadow") ? this.getAttribute("boxShadow") : "none";
 
     const cssVariables = document.createElement("style");
     cssVariables.textContent = `
@@ -34,12 +38,12 @@ class Cuboid extends HTMLElement {
         --rotate-z: ${rotateZ}deg;
 
         --background: ${texture};
+        --box-shadow: ${boxShadow};
       }
     `;
 
-    const style = document.createElement("link");
-    style.rel = "stylesheet";
-    style.href = "/styles/cuboid.css";
+    const style = document.createElement("style");
+    style.textContent = styleSource;
 
     const faces = [];
 
