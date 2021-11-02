@@ -2,12 +2,13 @@
 
 body {
   overflow: hidden;
-  background: radial-gradient(rgb(19, 21, 36), rgb(15, 15, 20));
+  background-color: rgb(12, 13, 24);
+  // background: radial-gradient(rgb(19, 21, 36), rgb(15, 15, 20));
 }
 
 header {
-  --floor-width: 150;
-  --floor-height: 150;
+  --floor-width: 180;
+  --floor-height: 180;
 }
 
 .floor {
@@ -22,10 +23,10 @@ header {
   background-color: #e5e5f7;
   opacity: 1;
   background: url(/img/floor.jpg);
-  background-size: 16%;
+  background-size: 16rem;
   border-radius: 5vmin;
 
-  box-shadow: 0 0 12vmin 4vmin rgb(12, 13, 24) inset;
+  box-shadow: 0 0 12vmin 5vmin rgb(12, 13, 24) inset;
 
   display: flex;
   justify-content: center;
@@ -36,7 +37,7 @@ header {
     position: absolute;
     width: 100.4%;
     height: 100.4%;
-    background: radial-gradient(rgba(74, 77, 170, 0.062), 50%, rgb(12, 13, 24));
+    background:  radial-gradient(circle, rgba(12,13,24,0) 10%, rgba(12,13,24,1) 57%);
     border-radius: 5vmin;
   }
 }
