@@ -1,4 +1,4 @@
-@import url(shared.scss);
+@import "shared.scss";
 
 header {
   overflow: hidden;
@@ -9,7 +9,7 @@ header {
     position: absolute;
     bottom: 3vmin;
     left: 50%;
-    transform: translate(-50%, -50%) scale(.9);
+    transform: translate(-50%, -50%) scale(0.9);
     width: 4rem;
     height: 3rem;
 
@@ -23,11 +23,12 @@ header {
       animation: 2.2s arrow-fade linear infinite;
       opacity: 0;
 
-      &::before, &::after {
+      &::before,
+      &::after {
         content: "";
         position: absolute;
         width: 50%;
-        height: .4rem;
+        height: 0.4rem;
         border-radius: 1rem;
         background: white;
         transform: translate(-32%) rotate(40deg);
@@ -98,7 +99,7 @@ header {
       position: absolute;
       width: 100.4%;
       height: 100.4%;
-      background:  radial-gradient(circle, rgba(12,13,24,0) 10%, rgba(12,13,24,1) 57%);
+      background: radial-gradient(circle, rgba(12, 13, 24, 0) 10%, rgba(12, 13, 24, 1) 57%);
       border-radius: 5vmin;
     }
   }
@@ -134,9 +135,9 @@ header {
       width: 2vmin;
       height: 2vmin;
       background: black;
-      filter: blur(.5vmin);
+      filter: blur(0.5vmin);
       transform: translate(-50%, -50%);
-      opacity: .55;
+      opacity: 0.55;
       box-shadow: 0 0 3.2vmin 1.5vmin black;
 
       &.bl {
@@ -176,9 +177,7 @@ header {
 
 #main {
   width: 100%;
-  min-height: 100vh;
-  background-color: #e5e5f7;
-  background-color: #e5e5f7;
+  min-height: calc(100vh + 35vmin);
   background-color: #e5e5f7;
   background-image: radial-gradient(#181833 1.2000000000000002px, #e5e5f7 1.2000000000000002px);
   background-size: 24px 24px;
@@ -189,19 +188,39 @@ header {
     position: relative;
     overflow: hidden;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       right: -20%;
       top: -10vmin;
       width: 120%;
       height: 26vmin;
-      background-color:rgb(12, 13, 24);
+      background-color: rgb(12, 13, 24);
       transform: rotate(3.5deg);
     }
-    
+
     &::after {
       filter: blur(6vmin);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tags {
+    display: flex;
+    margin: 2rem 0;
+    gap: 1rem;
+
+    * {
+      cursor: pointer;
     }
   }
 }

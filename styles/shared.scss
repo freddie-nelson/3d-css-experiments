@@ -5,10 +5,12 @@
   scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .scene {
@@ -40,4 +42,42 @@ html, body {
   transform-style: preserve-3d;
   transform: rotateX(calc(var(--rotate-x) * 1deg)) rotateY(calc(var(--rotate-y) * 1deg)) rotateX(90deg)
     translate3d(calc(var(--x) * 1vmin), calc(var(--y) * 1vmin), calc(var(--z) * 1vmin));
+}
+
+.title {
+  font-size: 4rem;
+  color: black;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+.tag {
+  --color: black;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  border: 0.25rem solid var(--color);
+  border-radius: 20rem;
+  transition: background-color 0.3s ease;
+  color: var(--color);
+  font-size: 1.1rem;
+  width: auto;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+
+  &:hover {
+    background-color: var(--color);
+    color: white;
+  }
+}
+
+.card {
+  background-color: #f3f3ff;
+  border-radius: 1.2rem;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(8, 6, 6, 0.18);
 }
