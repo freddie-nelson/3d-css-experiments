@@ -1,0 +1,25 @@
+.cards {
+  position: absolute;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) translate3d(var(--x), var(--y), var(--z)) rotateX(var(--rotate-x))
+    rotateY(var(--rotate-y)) rotateZ(var(--rotate-z));
+
+  .card {
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    border-radius: calc(var(--width) / 7);
+    background: var(--texture);
+    background-size: cover;
+
+    transform-origin: center;
+    transform-style: preserve-3d;
+
+    z-index: calc(var(--count) - var(--index));
+
+    --pos: calc(var(--index) - var(--count) / 2);
+    --abs-pos: max(var(--pos), -1 * var(--pos));
+    transform: translateX(-50%) translateX(calc(var(--pos) * var(--width) * 0.5)) rotateX(180deg);
+  }
+}

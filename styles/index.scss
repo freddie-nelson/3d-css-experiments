@@ -179,7 +179,7 @@ header {
   width: 100%;
   min-height: calc(100vh + 35vmin);
   background-color: #e5e5f7;
-  background-image: radial-gradient(#181833 1.2000000000000002px, #e5e5f7 1.2000000000000002px);
+  background-image: radial-gradient(#181833 1.2px, #e5e5f7 1.2px);
   background-size: 24px 24px;
 
   .seperator {
@@ -218,9 +218,5 @@ header {
     display: flex;
     margin: 2rem 0;
     gap: 1rem;
-
-    * {
-      cursor: pointer;
-    }
   }
 }

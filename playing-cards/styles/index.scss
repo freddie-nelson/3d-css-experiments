@@ -1,0 +1,31 @@
+@import "../styles/shared.scss";
+
+:root {
+  --bg: radial-gradient(circle, #415ce6 0%, #7f26f2 100%);
+
+  --scene-perspective: 800;
+
+  --table-color: rgba(255, 255, 255, 0.205);
+  --table-tilt: -18;
+  --table-rounding: 0.1vmin;
+}
+
+.scene {
+  --perspective: var(--scene-perspective);
+
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.table {
+  --width: 110;
+  --height: 110;
+
+  --rotate-x: var(--table-tilt);
+
+  background-color: var(--table-color);
+  border-radius: calc(var(--width) * var(--table-rounding));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

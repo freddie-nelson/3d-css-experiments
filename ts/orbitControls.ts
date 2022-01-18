@@ -23,16 +23,14 @@ class OrbitControls {
 
   constructor(element: HTMLElement, spin = false) {
     this.element = element;
-    this.updateElementStyle();
 
     // event listeners
-    document.body.addEventListener("mousedown", (e) => { 
-      this.dragging = true; 
+    document.body.addEventListener("mousedown", (e) => {
+      this.dragging = true;
 
       if (!this.disableY) {
-        this.anchorX = e.clientX; 
-        this.lastX = e.clientX; 
-        
+        this.anchorX = e.clientX;
+        this.lastX = e.clientX;
       }
       if (!this.disableX) {
         this.anchorY = e.clientY;
@@ -42,11 +40,11 @@ class OrbitControls {
     document.body.addEventListener("mousemove", (e) => {
       if (!this.dragging) return;
 
-      if (!this.disableY) this.cursorX = e.clientX; 
+      if (!this.disableY) this.cursorX = e.clientX;
       if (!this.disableX) this.cursorY = e.clientY;
       this.orbit();
     });
-    document.body.addEventListener("mouseup", () => { 
+    document.body.addEventListener("mouseup", () => {
       this.dragging = false;
     });
 
@@ -58,11 +56,13 @@ class OrbitControls {
     // disable rotation axes
     this.disableX = element.hasAttribute("disableX");
     this.disableY = element.hasAttribute("disableY");
+
+    this.updateElementStyle();
   }
 
   spin() {
     requestAnimationFrame(() => this.spin());
-    if (this.dragging) return; 
+    if (this.dragging) return;
 
     const direction = Math.sign(this.cursorX - this.anchorX) || -1;
     this.rotateY += 0.001 * this.sensitivity * direction;
@@ -73,8 +73,8 @@ class OrbitControls {
     const diffX = this.cursorX - this.lastX;
     const diffY = this.cursorY - this.lastY;
 
-    this.rotateX -= diffY / window.innerHeight * this.sensitivity;
-    this.rotateY += diffX / window.innerWidth * this.sensitivity;
+    this.rotateX -= (diffY / window.innerHeight) * this.sensitivity;
+    this.rotateY += (diffX / window.innerWidth) * this.sensitivity;
 
     this.updateElementStyle();
 
@@ -84,8 +84,8 @@ class OrbitControls {
 
   updateElementStyle() {
     let vars = ``;
-    vars += !this.disableX ? `--rotate-x: ${this.rotateX}` : "";
-    vars += !this.disableY ? `--rotate-y: ${this.rotateY}` : "";
+    vars += !this.disableX ? `--rotate-x: ${this.rotateX};` : "";
+    vars += !this.disableY ? `--rotate-y: ${this.rotateY};` : "";
     this.element.style.cssText = vars;
   }
 }

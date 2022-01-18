@@ -68,16 +68,66 @@ body {
   width: auto;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
 
   &:hover {
     background-color: var(--color);
     color: white;
   }
+
+  &--filled {
+    color: white;
+    background-color: var(--color);
+  }
+
+  &--small {
+    padding: 0.3rem 1rem;
+    border-width: 0.18rem;
+    font-size: 0.9rem;
+  }
 }
 
 .card {
+  position: relative;
   background-color: #f3f3ff;
   border-radius: 1.2rem;
   padding: 2.5rem;
   box-shadow: 0 25px 50px -12px rgba(8, 6, 6, 0.18);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  transform-style: preserve-3d;
+  text-decoration: none;
+
+  &--experiment {
+    cursor: pointer;
+    --border: 12px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateZ(-1px);
+      width: calc(100% - var(--border));
+      height: calc(100% - var(--border));
+      border-radius: 1.2rem;
+      background-color: #25d366;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      &::after {
+        width: calc(100% + var(--border));
+        height: calc(100% + var(--border));
+        border-radius: 1.4rem;
+      }
+    }
+  }
+
+  &__title {
+    color: black;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
 }
